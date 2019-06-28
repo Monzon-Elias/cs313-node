@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Static Page</title>
+ <style>
+   input[type="submit"]{position: relative; z-index: 10;}
+   input[type="radio"]:checked + fieldset {
+    opacity: 1;
+    max-height: 150px;
+   }
+  .reveal-if-active {
+    opacity: 0;
+    max-height: 0;
+    transition: 0.3s;
+   }
+</style>
+</head>
+
+<body>
+  <h1>POST RATE CALCULATOR</h1>
+  <form action="/result" method="get">
+    <fieldset>
+      <fieldset>
+        <label>
+          <h3>Please select your mail type:</h3>
+        </label>
+        <br>
+          <input type="radio" name="type" value="stamped" id="stampedRadio"> Letters (Stamped)
+              <fieldset class="reveal-if-active">
+                <label>
+                  <h3>Please, slide your item weight:</h3>
+                </label>
+                <br>
+                <input type="range" min="1" max="3.5" step=".5" value="2" class="shortRange">
+                <p>Value: <span class="demo"></span></p><br><br>  
+              </fieldset>
+              <br>
+          <input type="radio" name="type" value="metered" id="meteredRadio"> Letters (Metered)
+              <fieldset class="reveal-if-active">
+                <label>
+                  <h3>Please, slide your item weight:</h3>
+                </label>
+                <br>
+                <input type="range" min="1" max="3.5" step=".5" value="2" class="shortRange">
+                <p>Value: <span class="demo"></span></p><br><br>  
+              </fieldset>
+              <br>
+          <input type="radio" name="type" value="flats" id="flatsRadio"> Large Envelopes (Flats)
+              <fieldset class="reveal-if-active">
+                <label>
+                  <h3>Please, slide your item weight:</h3>
+                </label>
+                <br>
+                <input type="range" min="1" max="13" value="6" class="largeRange">
+                <p>Value: <span class="demo"></span></p><br><br>  
+              </fieldset>
+              <br>
+          <input type="radio" name="type" value="retail" id="retailRadio"> First-Class Package Service (Retail)
+              <fieldset class="reveal-if-active">
+                <label>
+                  <h3>Please, slide your item weight:</h3>
+                </label>
+                <br>
+                <input type="range" min="1" max="13" value="6" class="largeRange">
+                <p>Value: <span class="demo"></span></p><br><br>  
+              </fieldset>
+              <br>
+          <input type="submit" value="Calculate your Post Rate">
+      </fieldset>
+    </fieldset>
+  </form>
+</body>
+</html>
+<script>
+  document.getElementsByClassName("shortRange").oninput = 0; 
+  document.getElementsByClassName("largeRange").oninput = 0;
+//SHORT RANGE INPUTS
+  document.getElementsByClassName("shortRange")[0].oninput = function(){ document.getElementsByClassName("demo")[0].innerHTML = this.value;
+  document.getElementsByClassName("shortRange")[0].name = "weight";}
+  document.getElementsByClassName("shortRange")[1].oninput = function(){ document.getElementsByClassName("demo")[1].innerHTML = this.value;
+  document.getElementsByClassName("shortRange")[1].name = "weight";}                                                                        
+//LARGE RANGE INPUTS  
+  document.getElementsByClassName("largeRange")[0].oninput = function(){ document.getElementsByClassName("demo")[2].innerHTML = this.value;
+  document.getElementsByClassName("largeRange")[0].name = "weight";}                
+  document.getElementsByClassName("largeRange")[1].oninput = function(){ document.getElementsByClassName("demo")[3].innerHTML = this.value;
+  document.getElementsByClassName("largeRange")[1].name = "weight";}
+</script>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Your post details</title>
+  <style> body{margin-left: 2%}</style>
+</head>
+<body>
+	<h1>Your post details</h1>
+    
+    <h2>Post type: <%= t %></h2>
+    <h2>Post weight: <%= w %></h2> 
+ <%if(t == "stamped" && w == 3.5) {cost = 1.00; cost = cost.toFixed(2);}
+   if(t == "metered" && w == 3.5) {cost = 0.95; cost = cost.toFixed(2);}
+ %><h2>Post cost: $<%= cost %></h2>
+
+</body>
+</html>
