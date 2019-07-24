@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Favorite Weather Site - Weather Info</title>
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style-original.css">
+    <script src="scripts-original.js"></script>
+  </head>
+
+<body>
+    <video autoplay muted loop>
+      <source src="images/Pexels Videos 4703.mp4" type="video/mp4">
+    </video>
+
+    <div class="content">
+      <h1>Type a City of this World</h1>
+      <form method="get" action="weatherInfo.html" id="form">
+        <input type="search" name="q" id="txtSearch" pattern= "[a-zA-Z]{2,25}" title="Please, just type city names" onKeyDown="if(event.keyCode == 13) search();">
+      </form>
+    </div>
+</body>
+</html>
